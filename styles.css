@@ -1,11 +1,44 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f9f9f9;
-  min-height: 100vh;
+  background-color: rgb(249, 249, 249);
   margin: 0;
   padding: 0;
 }
+
+.container {
+  position: relative;
+}
+
+.container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-image: url('./assets/puppy_collage.png');
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 60px;
+}
+
+.title {
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  background: white;
+  width: 35%;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -13,38 +46,84 @@ body {
   gap: 20px;
   padding: 20px;
 }
+
 .parent-card {
-  background: #e3e2de;
+  width: 95%;
+  max-width: 350px;
+  background: rgb(241, 241, 237);
   padding: 15px;
-  border-radius: 12.5px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 300px;
 }
-.parent-card img {
-  width: 100%;
-  border-radius: 12.5px;
-}
+
 .puppy-card {
+  width: 90%;
+  max-width: 300px;
   background: white;
   padding: 10px;
-  border-radius: 10px;
+  padding-bottom: 5px;
+  border-radius: 12.5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 250px;
 }
+
+.parent-card img,
 .puppy-card img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12.5px;
 }
+
 footer {
   position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
-  margin-top: 20px;
   padding: 10px;
-  background-color: #c7c3c3;
-  color: white;
+  background-color: rgb(221, 213, 213);
+  color: #333;
+  text-align: center;
+  font-size: 14px;
 }
+
+footer p {
+  margin: 5px;
+}
+
 a {
-  color: white;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .title {
+    width: 60%;
+  }
+
+  .gallery {
+    flex-direction: wrap;
+    align-items: center;
+  }
+
+  .parent-card {
+    width: 35%;
+  }
+
+  .puppy-card {
+    width: 35%;
+  }
+
+  .parent-card .description,
+  .puppy-card .description {
+    display: none;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .promo {
+    font-size: 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
 }
