@@ -4,6 +4,7 @@ function displayImages(files) {
     .then((files) => {
       const gallery = document.querySelector('.gallery');
 
+      console.log(files);
       files.forEach((file) => {
         const puppyCard = document.createElement('div');
         puppyCard.classList.add('puppy-card');
