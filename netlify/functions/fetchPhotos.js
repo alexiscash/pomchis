@@ -5,7 +5,6 @@ exports.handler = async function () {
   const FOLDER_ID = '1nKAFgDXkQJq0Jvr8L-Yn8fZo9TifdJuX';
   const url = `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id, name)`;
 
-  console.log('api key', process.env.API_KEY);
   try {
     const response = await fetch(url);
     const data = await response.json();

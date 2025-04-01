@@ -1,11 +1,11 @@
 function displayImages(files) {
   fetch('https://pomchis.netlify.app/.netlify/functions/fetchPhotos')
     .then((j) => j.json())
-    .then((files) => {
+    .then((data) => {
       const gallery = document.querySelector('.gallery');
 
       console.log(files);
-      files.forEach((file) => {
+      data.files.forEach((file) => {
         const puppyCard = document.createElement('div');
         puppyCard.classList.add('puppy-card');
 
