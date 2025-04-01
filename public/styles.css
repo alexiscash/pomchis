@@ -19,7 +19,7 @@ body {
   right: 0;
   z-index: 1;
   min-height: 100vh;
-  background-image: url('./assets/puppy_collage.png');
+  background-image: url('../assets/puppy_collage.png');
   opacity: 0.5;
   background-size: cover;
   background-position: center;
