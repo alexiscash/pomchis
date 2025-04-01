@@ -1,13 +1,11 @@
 require('dotenv').config();
 
-console.log(process.env.TEST);
-
 exports.handler = async function () {
-  console.log('inside the handler');
   const API_KEY = process.env.API_KEY;
   const FOLDER_ID = '1nKAFgDXkQJq0Jvr8L-Yn8fZo9TifdJuX';
   const url = `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&key=${API_KEY}&fields=files(id, name)`;
 
+  console.log('api key', process.env.API_KEY);
   try {
     const response = await fetch(url);
     const data = await response.json();
