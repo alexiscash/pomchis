@@ -1,6 +1,4 @@
-export default function ParentCard(props) {
-  const { name, desc, img, parent } = props;
-
+export default function ParentCard({ name, desc, img, parent }) {
   return (
     <div className="parent-card">
       <p>{parent}</p>

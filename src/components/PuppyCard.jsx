@@ -1,5 +1,4 @@
-export default function PuppyCard(props) {
-  const { name, desc, img, sex } = props;
+export default function PuppyCard({ name, desc, img, sex }) {
   return (
     <div className="puppy-card">
       <img src={img} alt={name} />
