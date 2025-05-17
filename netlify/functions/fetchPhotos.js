@@ -18,6 +18,7 @@ exports.handler = async function () {
       },
     };
   } catch (err) {
+    console.error('oh no bro', err);
     return {
       statusCode: 500,
       body: JSON.stringify({ message: 'Unable to fetch photos' }),

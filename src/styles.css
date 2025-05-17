@@ -19,7 +19,26 @@ body {
   right: 0;
   z-index: 1;
   min-height: 100vh;
-  background-image: url('./assets/puppy_collage.png');
+  background-image: url('../assets/puppy_collage.png');
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+}
+
+.photos-container {
+  position: relative;
+}
+
+.photos-container:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  min-height: 100vh;
+  background-image: url('../assets/puppy_collage.png');
   opacity: 0.5;
   background-size: cover;
   background-position: center;
@@ -57,7 +76,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.puppy-card {
+.puppy-card,
+.photo-card {
   width: 90%;
   max-width: 300px;
   background: white;
@@ -70,6 +90,13 @@ body {
 .parent-card img,
 .puppy-card img {
   width: 100%;
+  border-radius: 12.5px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 12.5px;
 }
 
@@ -126,5 +153,9 @@ a {
 
   footer {
     font-size: 12px;
+  }
+
+  .photo-card {
+    width: 40%;
   }
 }
