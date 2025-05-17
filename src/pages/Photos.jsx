@@ -1,16 +1,16 @@
 import { Link } from 'react-router';
 import Header from '../components/Header';
 import { useEffect, useState } from 'react';
+import Loading from '../components/Loading';
 
 export default function Photos() {
   const [photos, setPhotos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://pomchis.netlify.app/.netlify/functions/fetchPhotos')
       .then((j) => j.json())
       .then((data) => {
-        console.log(data.files.length);
-
         setPhotos(
           data.files.map((file) => {
             return {
@@ -20,6 +20,8 @@ export default function Photos() {
             };
           })
         );
+
+        setLoading(false);
       });
   }, []);
 
@@ -28,7 +30,9 @@ export default function Photos() {
       <div className="content">
         <Header />
         <div className="gallery">
-          {photos.length > 0 &&
+          {loading ? (
+            <Loading />
+          ) : (
             photos.map((p) => {
               return (
                 <div className="photo-card" key={p.id}>
@@ -37,7 +41,8 @@ export default function Photos() {
                   </a>
                 </div>
               );
-            })}
+            })
+          )}
         </div>
 
         <footer>
